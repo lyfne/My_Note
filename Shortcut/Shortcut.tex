@@ -1,8 +1,27 @@
 \documentclass[UTF8]{ctexart}
+\usepackage{amsmath}
+
+\makeatletter %使\section中的内容左对齐
+\renewcommand{\section}{\@startsection{section}{1}{0mm}
+  {-\baselineskip}{0.5\baselineskip}{\bf\leftline}}
+\makeatother
+
 \title{开发笔记}
 \author{Ivan Lin}
 \date{\today}
 \begin{document}
 \maketitle
-你好，world!
+\section*{Visual Studio}
+\noindent Resharper插件\\
+alt + o: .h和.cpp文件切换\\
+alt + 鼠标: 框选模式\\
+ctrl+k + ctrl+c: 注释代码\\
+\\\section*{计算机图形学}
+\noindent 坐标系模拟：拇指x，食指y，中指z。左手系和右手系\\
+标准化向量 = 单位向量 = 法线，$V_{norm} = \frac{V}{|V|}$\\
+\textbf{a} + \textbf{b} 几何解释：\textbf{a}的头连接\textbf{b}的尾，然后从\textbf{a}的尾向\textbf{b}的头画一个向量\\
+\textbf{a} - \textbf{b} 几何解释：\textbf{a}的尾连接\textbf{b}的尾，然后从\textbf{b}的头向\textbf{a}的头画一个向量\\
+\textbf{a $\cdot$ b} = \textbf{$a_1b_1+...+a_nb_n$}, 点乘，几何解释：\textbf{a $\cdot$ b} = \textbf{|a||b|}cos$\theta$（两向量夹角）\\
+\\\section*{Swift}
+\noindent \textbf{http://blackblake.synology.me/wordpress/?p=29}: Swift里的Optional和Unwrapping\\
 \end{document}
