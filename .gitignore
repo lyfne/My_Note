@@ -7,6 +7,14 @@
 
 *.gz
 
+*.bak
+
+*.dvi
+
+*.blg
+
+*.bbl
+
 Shortcut/Shortcut.aux
 
 Shortcut/Shortcut.fdb_latexmk
