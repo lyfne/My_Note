@@ -11,6 +11,7 @@
 \date{\today}
 \begin{document}
 \maketitle
+
 \section*{Visual Studio}
 \noindent Resharper插件\\
 alt + o: .h和.cpp文件切换\\
@@ -18,10 +19,19 @@ alt + 鼠标: 框选模式\\
 ctrl+k + ctrl+c: 注释代码\\
 \\\section*{计算机图形学}
 \noindent 坐标系模拟：拇指x，食指y，中指z。左手系和右手系\\
-标准化向量 = 单位向量 = 法线，$V_{norm} = \frac{V}{|V|}$\\
+标准化向量 = 单位向量 = 法线，$\textbf{v}_{norm} = \frac{\textbf{v}}{\textbf{|v|}}$\\
 \textbf{a} + \textbf{b} 几何解释：\textbf{a}的头连接\textbf{b}的尾，然后从\textbf{a}的尾向\textbf{b}的头画一个向量\\
 \textbf{a} - \textbf{b} 几何解释：\textbf{a}的尾连接\textbf{b}的尾，然后从\textbf{b}的头向\textbf{a}的头画一个向量\\
-\textbf{a $\cdot$ b} = \textbf{$a_1b_1+...+a_nb_n$}, 点乘，几何解释：\textbf{a $\cdot$ b} = \textbf{|a||b|}cos$\theta$（两向量夹角）\\
+向量点乘：\textbf{a $\cdot$ b}(\textbf{ab}) = \textbf{$a_1b_1+...+a_nb_n$}, 几何解释：\textbf{a $\cdot$ b} = \textbf{|a||b|}cos$\theta$（两向量夹角）\\
+向量投影：\textbf{v}分解为平行和垂直于\textbf{n}的两个分量。\\
+\[ \textbf{v}_{||} = \textbf{n}\frac{\textbf{v $\cdot$ n}}{\textbf{|n|}^2} \qquad \textbf{v}_{\bot} = \textbf{|v|} - \textbf{v}_{||}\] 
+向量叉乘：仅可用于3D向量，$\textbf{a}\times\textbf{b} = \begin{bmatrix} \textbf{a}_y\textbf{b}_z - \textbf{a}_z\textbf{b}_y \\ \textbf{a}_z\textbf{b}_x - \textbf{a}_x\textbf{b}_z \\ \textbf{a}_x\textbf{b}_y - \textbf{a}_y\textbf{b}_x \end{bmatrix}$，几何解释：结果向量垂直于原来两个向量，$|\textbf{a}\times\textbf{b}| = |\textbf{a}||\textbf{b}|sin\theta$，$|\textbf{a}\times\textbf{b}| = 0$表示\textbf{a}与\textbf{b}平行或有一个为\textbf{0} \\
+\\\section*{Sublime Text 2}
+\noindent ctrl+shift+up/down: move line up/down\\
+ctrl+alt+up/down: block edit up/down\\
 \\\section*{Swift}
 \noindent \textbf{http://blackblake.synology.me/wordpress/?p=29}: Swift里的Optional和Unwrapping\\
+\\\section*{PhotoShop}
+\noindent alt+ctrl+c: Resize Canvas\\
+alt+ctrl+shift+s: Save for web\\
 \end{document}
