@@ -37,7 +37,13 @@ $P_{camera} = P_{object}M_{object\to world}M_{world\to camera}$\\
 线性变换： F(a+b) = F(a)+F(b), F(ka) = kF(a), 则称映射F是线性的（\textbf{aM}满足此条件）\\
 仿射变换： 线性变换后接平移, $v^{'} = v\textbf{M} + \textbf{b}$\\
 对\textbf{aM}, 求逆变换等价于求矩阵的逆\\
-矩阵行列式： $|\textbf{M}|  = \sum_{j=1}^{n}m_{ij}c_{ij} = \sum_{j=1}^{n}m_{ij}(-1)^{i+j}| \textbf{M}^{\{ij\}}|$
+矩阵行列式： $|\textbf{M}|  = \sum_{j=1}^{n}m_{ij}c_{ij} = \sum_{j=1}^{n}m_{ij}(-1)^{i+j}| \textbf{M}^{\{ij\}}|$\\
+矩阵的逆: $M(M^{-1}) = M^-1M = I$, 不可逆矩阵又称奇异矩阵，奇异矩阵行列式为0\\
+标准伴随矩阵：adj\textbf{M}, M的代数余子式矩阵的转置矩阵。$M^{-1} = \frac{adj\textbf{M}}{|\textbf{M}|}$\\
+正交矩阵：\textbf{$MM^{T} = I$}, 旋转和镜像矩阵是正交矩阵。正交矩阵满足：矩阵的每一行都是单位向量，矩阵的所有行相互垂直。\\
+Vector4, 齐次坐标。(x, y, z, w)实际代表3D中的(x/w, y/w, z/w)\\
+旋转矩阵：描述一个坐标中基向量到另一个坐标基向量的转换。
+欧拉角：heading-pitch-bank约定。
 \section*{Sublime Text 2}
 \noindent ctrl+shift+up/down: move line up/down\\
 ctrl+alt+up/down: block edit up/down\\
@@ -52,4 +58,7 @@ alt+ctrl+shift+s: Save for web\\
 \noindent gitk file/folder: show commit with file\\
 \section*{Windows}
 \noindent 放大镜： ctrl+alt+d: 停靠模式; ctrl+alt+l: 窗口模式; win++: 放大; win+esc: 退出放大镜\\
+\section*{JavaScript}
+\noindent JavaScript组成: ECMAScript, DOM:针对XML文件的操作接口, BOM:浏览器对象模型，HTML5标准化\\
+浮点数误差：0.1 + 0.2 = 0.300000000004，通过x10法解决\\
 \end{document}
