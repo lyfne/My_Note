@@ -23,6 +23,7 @@ ctrl+k + ctrl+c: 注释代码\\
 shift+alt+up/down: 框选模式上下\\
 ctrl+alt+a: open Command Window\\
 ReSharper\_Suspend/ReSharper\_Resume in Command Window: close/open ReSharper\\
+lib:静态库，在编译时将库代码加入程序中；dll:动态库，编译时生成一个lib和一个dll，lib用于存放dll中相应接口的索引\\
 \section*{计算机图形学}
 \noindent 坐标系模拟：拇指x，食指y，中指z。左手系和右手系\\
 标准化向量 = 单位向量 = 法线，$\textbf{v}_{norm} = \frac{\textbf{v}}{\textbf{\textbar v\textbar }}$\\
@@ -31,7 +32,7 @@ ReSharper\_Suspend/ReSharper\_Resume in Command Window: close/open ReSharper\\
 向量点乘：\textbf{a $\cdot$ b}(\textbf{ab}) = \textbf{$a_1b_1+...+a_nb_n$}, 几何解释：\textbf{a $\cdot$ b} = \textbf{\textbar a\textbar \textbar b\textbar }cos$\theta$（两向量夹角）\\
 向量投影：\textbf{v}分解为平行和垂直于\textbf{n}的两个分量。\\
 \[ \textbf{v}_{||} = \textbf{n}\frac{\textbf{v $\cdot$ n}}{\textbf{\textbar n\textbar }^2} \qquad \textbf{v}_{\bot} = \textbf{\textbar v\textbar } - \textbf{v}_{||}\]
-向量叉乘：仅可用于3D向量，$\textbf{a}\times\textbf{b} = \begin{bmatrix} \textbf{a}_y\textbf{b}_z - \textbf{a}_z\textbf{b}_y \\ \textbf{a}_z\textbf{b}_x - \textbf{a}_x\textbf{b}_z \\ \textbf{a}_x\textbf{b}_y - \textbf{a}_y\textbf{b}_x \end{bmatrix}$，几何解释：结果向量垂直于原来两个向量，$|\textbf{a}\times\textbf{b}| = |\textbf{a}||\textbf{b}|sin\theta$，$|\textbf{a}\times\textbf{b}| = 0$表示\textbf{a}与\textbf{b}平行或有一个为\textbf{0}\\
+向量叉乘：仅可用于3D向量，$\textbf{a}\times\textbf{b} = \begin{bmatrix} \textbf{a}_y\textbf{b}_z - \textbf{a}_z\textbf{b}_y \\ \textbf{a}_z\textbf{b}_x - \textbf{a}_x\textbf{b}_z \\ \textbf{a}_x\textbf{b}_y - \textbf{a}_y\textbf{b}_x \end{bmatrix}$，几何解释：结果向量垂直于原来两个向量，$|\textbf{a}\times\textbf{b}| = |\textbf{a}||\textbf{b}|sin\theta$\\, $|\textbf{a}\times\textbf{b}| = 0$ 表示\textbf{a}与\textbf{b}平行或有一个为\textbf{0}\\
 矩阵转置： \textbf{$M^T$}, 其列由\textbf{M}的行组成，\textbf{${M^T}_{ji}$} = \textbf{$M_{ij}$}\\
 \textbf{${(AB)}^T = {B^T}{A^T}$}, 可推广到字符串翻转\\
 $P_{camera} = P_{object}M_{object\to world}M_{world\to camera}$\\
@@ -43,8 +44,14 @@ $P_{camera} = P_{object}M_{object\to world}M_{world\to camera}$\\
 标准伴随矩阵：adj\textbf{M}, M的代数余子式矩阵的转置矩阵。$M^{-1} = \frac{adj\textbf{M}}{|\textbf{M}|}$\\
 正交矩阵：\textbf{$MM^{T} = I$}, 旋转和镜像矩阵是正交矩阵。正交矩阵满足：矩阵的每一行都是单位向量，矩阵的所有行相互垂直。\\
 Vector4, 齐次坐标。(x, y, z, w)实际代表3D中的(x/w, y/w, z/w)\\
-旋转矩阵：描述一个坐标中基向量到另一个坐标基向量的转换。
-欧拉角：heading-pitch-bank约定。
+旋转矩阵：描述一个坐标中基向量到另一个坐标基向量的转换。\\
+矩阵蠕变：由于浮点数精度有限导致误差积累。\\
+欧拉角：heading-pitch-bank约定。\\
+万向锁：三个角度不互相独立，一旦选择正负90度为pitch角，就被限制在只能绕竖直轴旋转，失去了一个维度。\\
+四元数：\\
+几何图元自由度：是无歧义的描述该实体所需信息量的最小数目。\\
+射线：是一个有向线段，参数形式：$x(t)=x_0+t\triangle x \quad y(t)=y_0+t\triangle y$，向量记法:$p(t)=p_0 + td$，增量向量d指定了它的长度和方向, 斜截式：$y=mx+b$\\
+球和圆：
 \section*{Sublime Text 2}
 \noindent ctrl+shift+up/down: move line up/down\\
 ctrl+alt+up/down: block edit up/down\\
@@ -53,6 +60,7 @@ ctrl+alt+up/down: block edit up/down\\
 \section*{PhotoShop}
 \noindent alt+ctrl+c: Resize Canvas\\
 alt+ctrl+shift+s: Save for web\\
+ctrl+h: show canvas guides; ctrl+mouse drag ruler: add canvas guide\\
 \section*{LaTeX}
 \noindent \%!Mode:: "TeX:UTF-8": make WinEdt show Chinese\\
 \section*{Git}
