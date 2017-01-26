@@ -17,12 +17,8 @@
 
 *.sav
 
-Shortcut/Shortcut.aux
+*.pdf
 
-Shortcut/Shortcut.fdb_latexmk
+*.fls
 
-Shortcut/Shortcut.fls
-
-Shortcut/Shortcut.log
-
-Shortcut/Shortcut.synctex.gz
+*.pdf
