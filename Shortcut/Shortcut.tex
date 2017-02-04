@@ -51,7 +51,12 @@ Vector4, 齐次坐标。(x, y, z, w)实际代表3D中的(x/w, y/w, z/w)\\
 四元数：\\
 几何图元自由度：是无歧义的描述该实体所需信息量的最小数目。\\
 射线：是一个有向线段，参数形式：$x(t)=x_0+t\triangle x \quad y(t)=y_0+t\triangle y$，向量记法:$p(t)=p_0 + td$，增量向量d指定了它的长度和方向, 斜截式：$y=mx+b$\\
-球和圆：\\
+球和圆：球表面积$S=4\pi r^2$, 球体积$V=\frac{4}{3}\pi r^3$\\
+AABB: axially aligned bounding box, 轴对齐矩形边界框, 边垂直于坐标系.使用两个坐标$P_{min}$和$P_{max}$即可表示一个AABB. 变换AABB的方法，一种是重新计算变换物体的AABB, 另一种是变换AABB的八个顶点，然后根据这几个顶点计算新的AABB.\\ 
+OBB: oriented bounding box, 方向矩形边界框。\\
+平面: 隐式定义: $\textbf{p}\cdot \textbf{n}=d$, \textbf{n}为平面法向量，垂直于平面，指向方向为平面的正方向; 三个点定义: \textbf{n}通过两个点叉乘并标准化得到，d通过\textbf{n}与其中一个点点乘得到。\\
+点集的最佳平面：$\textbf{n}_x=\sum_{i=1}^{n}(z_{i}+z_{i+1})(y_{i}-y_{i+1})\qquad \textbf{n}_y=\sum_{i=1}^{n}(x_{i}+x_{i+1})(z_{i}-z_{i+1})\qquad \textbf{n}_z=\sum_{i=1}^{n}(y_{i}+y_{i+1})(x_{i}-x_{i+1})$, $d=\frac{1}{n}(\sum_{i=1}^{n}p_{i})\cdot \textbf{n}$\\
+点到平面的距离: $a=\textbf{q}\cdot \textbf{n}-d$\\
 \section*{Sublime Text 2}
 \noindent ctrl+shift+up/down: move line up/down\\
 ctrl+alt+up/down: block edit up/down\\
@@ -87,7 +92,7 @@ this引用的是函数据以执行的环境对象。\\
 eval()函数传入完整的JS代码。\\
 代码注入：\\
 对象中数据属性的四个特性:[[Configurable]] [[Enumerable]] [[Writable]] [[Value]], 使用defineProperty(obj, "propertyName")函数修改。\\
-_year表示只能通过对象方法访问的属性，需要在defineProperty(obj, "year")中定义getter和setter函数。\\
+\_year表示只能通过对象方法访问的属性，需要在defineProperty(obj, "year")中定义getter和setter函数。\\
 hasOwnProperty(name)只在有实例属性的时候返回true(对应的是hasPrototypeProperty(name)), "name" in obj在原型属性和实例属性都返回true。\\
 JS通过原型链实现继承, 具体实现为借用构造函数+原型链的寄生组合继承。\\
 \end{document}
