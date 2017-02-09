@@ -93,7 +93,7 @@ JS的数组可以同时储存任何类型的数据，且长度动态增长。var
 JS的数组length是非只读的，修改该值会删除相应的元素。\\
 splice函数: splice(0, 2): 删除数组中的前两项; splice(2, 0, "red", "green"): 从位置2插入"red"和"green"; splice(2, 1, "red"): 删除位置2的元素，并插入"red"\\
 JS的函数实际上是Function类型的实例。\\
-解释器会先读取函数声明(function sum(){};)，但函数表达式(var sum = function(){};)需要到相应的行才会执行。\\
+解释器会先读取函数声明(function sum(){};)(函数声明提升)，但函数表达式(var sum = function(){};)(又称匿名函数(Lambda))需要到相应的行才会执行。\\
 this引用的是函数据以执行的环境对象。\\
 不属于其他任何对象的属性和方法都属于Global对象的属性和方法，如isNaN().\\
 eval()函数传入完整的JS代码。\\
@@ -102,4 +102,5 @@ eval()函数传入完整的JS代码。\\
 \_year表示只能通过对象方法访问的属性，需要在defineProperty(obj, "year")中定义getter和setter函数。\\
 hasOwnProperty(name)只在有实例属性的时候返回true(对应的是hasPrototypeProperty(name)), "name" in obj在原型属性和实例属性都返回true。\\
 JS通过原型链实现继承, 具体实现为借用构造函数+原型链的寄生组合继承。\\
+闭包是指有权访问另一个函数作用域中的变量的函数。创建闭包的常用方式就是在函数内部创建另一个函数。闭包通过作用域链继续retain外部函数的实例，直到闭包函数结束调用或解除引用才会释放外部函数的实例。\\
 \end{document}
