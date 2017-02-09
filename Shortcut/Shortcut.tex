@@ -52,14 +52,18 @@ Vector4, 齐次坐标。(x, y, z, w)实际代表3D中的(x/w, y/w, z/w)\\
 几何图元自由度：是无歧义的描述该实体所需信息量的最小数目。\\
 射线：是一个有向线段，参数形式：$x(t)=x_0+t\triangle x \quad y(t)=y_0+t\triangle y$，向量记法:$p(t)=p_0 + td$，增量向量d指定了它的长度和方向, 斜截式：$y=mx+b$\\
 球和圆：球表面积$S=4\pi r^2$, 球体积$V=\frac{4}{3}\pi r^3$\\
-AABB: axially aligned bounding box, 轴对齐矩形边界框, 边垂直于坐标系.使用两个坐标$P_{min}$和$P_{max}$即可表示一个AABB. 变换AABB的方法，一种是重新计算变换物体的AABB, 另一种是变换AABB的八个顶点，然后根据这几个顶点计算新的AABB.\\ 
+AABB: axially aligned bounding box, 轴对齐矩形边界框, 边垂直于坐标系.使用两个坐标$P_{min}$和$P_{max}$即可表示一个AABB. 变换AABB的方法，一种是重新计算变换物体的AABB, 另一种是变换AABB的八个顶点，然后根据这几个顶点计算新的AABB.\\
 OBB: oriented bounding box, 方向矩形边界框。\\
 平面: 隐式定义: $\textbf{p}\cdot \textbf{n}=d$, \textbf{n}为平面法向量，垂直于平面，指向方向为平面的正方向; 三个点定义: \textbf{n}通过两个点叉乘并标准化得到，d通过\textbf{n}与其中一个点点乘得到。\\
 点集的最佳平面：$\textbf{n}_x=\sum_{i=1}^{n}(z_{i}+z_{i+1})(y_{i}-y_{i+1})\qquad \textbf{n}_y=\sum_{i=1}^{n}(x_{i}+x_{i+1})(z_{i}-z_{i+1})\qquad \textbf{n}_z=\sum_{i=1}^{n}(y_{i}+y_{i+1})(x_{i}-x_{i+1})$, $d=\frac{1}{n}(\sum_{i=1}^{n}p_{i})\cdot \textbf{n}$\\
 点到平面的距离: $a=\textbf{q}\cdot \textbf{n}-d$\\
+三角形面积: 海伦公式: $A=\sqrt{s(s-l_1)(s-l_2)(s-l_3))}$(s为周长的一半，l为三边长); $A=\frac{||e_1\times e_2||}{2}$(e为三角形的两个边向量)。\\
+凸多边形: 对于一个凸多边形，其内角和为$（n-2）180^{\circ}$，判断一个点是否在多边形内，该点与所有顶点的连线组成的角度和为$360^{\circ}$。\\
+点\textbf{q}在2D隐式直线上的投影点$\textbf{q'}=\textbf{q}+(d-\textbf{q}\cdot\textbf{n})\textbf{n}$
 \section*{Sublime Text 2}
 \noindent ctrl+shift+up/down: move line up/down\\
 ctrl+alt+up/down: block edit up/down\\
+alt+shift+1/2/3/4: change layout\\
 \section*{Swift}
 \noindent \textbf{http://blackblake.synology.me/wordpress/?p=29}: Swift里的Optional和Unwrapping\\
 \section*{PhotoShop}
@@ -72,6 +76,9 @@ ctrl+h: show canvas guides; ctrl+mouse drag ruler: add canvas guide\\
 \noindent gitk file/folder: show commit with file\\
 \section*{Windows}
 \noindent 放大镜： ctrl+alt+d: 停靠模式; ctrl+alt+l: 窗口模式; win++: 放大; win+esc: 退出放大镜\\
+alt+tab, win+tab: 切换窗口\\
+win+$\uparrow \downarrow \leftarrow \rightarrow$ : 放大/还原/左置/右置窗口。\\
+win+space/d:　透明化/最小化所有窗口。\\
 \section*{JavaScript}
 \noindent JavaScript组成: ECMAScript, DOM:针对XML文件的操作接口, BOM:浏览器对象模型，HTML5标准化\\
 浮点数误差：0.1 + 0.2 = 0.300000000004，通过x10法解决\\
