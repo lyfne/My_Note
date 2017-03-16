@@ -94,6 +94,14 @@ flat着色(逐多边形)和Gourand着色(逐顶点):flat着色效果不佳，暴
 光栅化:着色，测试，写入。\\
 可见面检测VSD:找出最终渲染画面中应绘制的三角形。使用视锥探测包围盒。\\
 四叉树:用于2D中的自适应空间分层(将平面分成四个象限，每个象限又可以细分，直到某个节点完全处于某个象限中)，八叉树是四叉树的3D延伸。\\
+\section*{OpenGL}
+\noindent OpenGL是Khronos组织制定并维护的规范，但是实现由开发者自己实现（显卡生产商）。\\
+OpenGL 3.2以前使用的是立即渲染模式，之后使用的是核心模式（更复杂但更灵活高效）。\\
+OpenGL是状态机：由一系列变量描述OpenGL此刻该如何运行，OpenGL状态常称为上下文（Context），我们使用设置选项和操作缓冲来控制上下文进行渲染。\\
+为了解决闪屏的问题，OpenGL引入双缓冲机制，前缓冲显示在屏幕上，下一帧渲染在后缓冲上执行，然后交换前后缓冲。\\
+\begin{center}
+  \includegraphics[width=0.8\textwidth]{images/pipeline.png}
+\end{center}
 \section*{Sublime Text 2}
 \noindent ctrl+shift+up/down: move line up/down\\
 ctrl+alt+up/down: block edit up/down\\
