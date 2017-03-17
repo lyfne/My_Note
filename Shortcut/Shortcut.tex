@@ -99,9 +99,12 @@ flat着色(逐多边形)和Gourand着色(逐顶点):flat着色效果不佳，暴
 OpenGL 3.2以前使用的是立即渲染模式，之后使用的是核心模式（更复杂但更灵活高效）。\\
 OpenGL是状态机：由一系列变量描述OpenGL此刻该如何运行，OpenGL状态常称为上下文（Context），我们使用设置选项和操作缓冲来控制上下文进行渲染。\\
 为了解决闪屏的问题，OpenGL引入双缓冲机制，前缓冲显示在屏幕上，下一帧渲染在后缓冲上执行，然后交换前后缓冲。\\
+Shader是运行在GPU上的小程序。in和out关键字定义顶点属性(Vertex Attribute)，前一个Shader的out属性可以在下一个Shader中通过in属性获得， uniform定义全局属性，在任何Shader上都可以访问。其运行流程如下图:\\
 \begin{center}
   \includegraphics[width=0.8\textwidth]{images/pipeline.png}
 \end{center}
+\\ 使用纹理坐标获取纹理颜色叫做采样(Sampling)，纹理坐标的(0,0)在左下角，(1,1)在右上角。\\
+邻近过滤(Nearest): 选取中心点最接近纹理坐标的那个像素；线性过滤(Linear): 基于纹理坐标附件的纹理像素计算出一个插值，近似出这些纹理像素之间的颜色。\\
 \section*{Sublime Text 2}
 \noindent ctrl+shift+up/down: move line up/down\\
 ctrl+alt+up/down: block edit up/down\\
